@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp_03_array
+namespace WFA_02_array
 {
-    public partial class Form1 : Form
+    public partial class Form1: Form
     {
         public Form1()
         {
             InitializeComponent();
+
             /*
              //#1. 배열
              // 같은 자료형 변수 여러개를 하나의 배열로 처리
@@ -88,29 +89,17 @@ namespace WindowsFormsApp_03_array
             */
 
 
-            string[][] jaggedArray1 = new string[2][];
-            jaggedArray1[0] = new string[2] { "이승민1", "이승민2" };
-            jaggedArray1[1] = new string[3] { "이승민3", "이승민4", "이승민5" };
-            jaggedArray1[2] = new string[1] { "이승민6" };
+            string[][] classArray1 = new string[3][];
+            classArray1[0] = new string[] { "이승민1", "이승민2" };
+            classArray1[1] = new string[] { "이승민3", "이승민4", "이승민5" };
+            classArray1[2] = new string[] { "이승민6" };
 
-
-            textBox2.Text = "1반 학생 목록 :" + "\r\n" + "-" + jaggedArray1[0][0].ToString();
-            textBox2.Text = "1반 학생 목록 :" + "\r\n" + "-" + jaggedArray1[0][1].ToString();
-            
-       
-
-
-
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            textBox1.Text = $"1반 학생 목록 \r\n - {classArray1[0][0]}\r\n - {classArray1[0][1]}\r\n";
+            textBox1.Text += $"2반 학생 목록 \r\n - {classArray1[1][0]}\r\n - {classArray1[1][1]}\r\n - {classArray1[1][2]}\r\n";
+            textBox1.Text += $"3반 학생 목록 \r\n - {classArray1[2][0]}";
+            //$은 문자열 보간 = {}안에 있는 값을 문자열로 치환해서 출력
+            //textBox1.Text = "1반 학생 목록 :" + "\r\n" + "-" + jaggedArray1[0][0].ToString();
+            //textBox1.Text = "1반 학생 목록 :" + "\r\n" + "-" + jaggedArray1[0][1].ToString();
 
         }
     }
