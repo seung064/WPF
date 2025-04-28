@@ -36,6 +36,8 @@ namespace practice2_250428
                 */
 
                 //실습3
+
+            /*
             string notebook = "노트북";
             int price = 1200000;
             float discount = 0.15f;
@@ -88,4 +90,6 @@ namespace practice2_250428
     }
     }
 
+            */
 
+            

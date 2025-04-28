@@ -8,27 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace practice2
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-
-            MessageBox.Show("안녕하세요");
-
-            textBox_print.Text = "이것은 \r\n vs 실습1 \r\n입니다.";
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
