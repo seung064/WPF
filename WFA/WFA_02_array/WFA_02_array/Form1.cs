@@ -101,6 +101,18 @@ namespace WFA_02_array
             //textBox1.Text = "1반 학생 목록 :" + "\r\n" + "-" + jaggedArray1[0][0].ToString();
             //textBox1.Text = "1반 학생 목록 :" + "\r\n" + "-" + jaggedArray1[0][1].ToString();
 
+
+            /*해설
+            string[][] school_class = new stirng[3][]
+            school_class[0] = new string[2] {"철희", "미애"}
+            school_class[1] = new string[3] {"철수", "영미", "민수"}
+            school_class[2] = new string[1] {"수빈"}
+
+
+            textBox1.Text = "";
+            textBox1.Text += "1반 학생 목록 : \r\n" 
+            textBox1.Text += "-" school_class[0][0] + " \r\n"
+            */
         }
     }
 }
