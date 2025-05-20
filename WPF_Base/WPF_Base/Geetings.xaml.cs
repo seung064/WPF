@@ -25,18 +25,16 @@ public partial class Geetings : Window
     {
         if (HelloButton.IsChecked == true)
         {
-             MessageBox.Show("Hello.");
+            MessageBox.Show("Hello.");
         }
         else if (GoodbyeButton.IsChecked == true)
         {
-              MessageBox.Show("Goodbye.");
+            MessageBox.Show("Goodbye.");
         }
     }
 
     private void RadioButton_Checked(object sender, RoutedEventArgs e)
     {
-        // 아무거나 넣어도 OK
-        // 예: 선택될 때 메시지
-        // MessageBox.Show("RadioButton Checked");
+
     }
 }

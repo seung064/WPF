@@ -10,6 +10,5 @@
         <TextBlock HorizontalAlignment="Center" Margin="0,74,0,0" TextWrapping="Wrap" Text="Select a message option and then choose the Display button" VerticalAlignment="Top" Height="20" Width="348" RenderTransformOrigin="-0.017,0.252"/>
         <RadioButton x:Name="HelloButton" Content="Hello" HorizontalAlignment="Left" Margin="226,0,0,0" VerticalAlignment="Center" Checked="RadioButton_Checked" IsChecked="True"/>
         <RadioButton x:Name="GoodbyeButton" Content="Goodbye" HorizontalAlignment="Left" Margin="488,0,0,0" VerticalAlignment="Center"/>
-        <Button Content="Display" HorizontalAlignment="Center" Height="29" Margin="0,322,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
     </Grid>
 </Window>
