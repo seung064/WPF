@@ -31,8 +31,12 @@ namespace WPF_Base_Practice
 
             if(string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(pw))
             {
-                MessageBox.Show("아이디와 비밀번호를 입력하세요.","경고", MessageBoxButton.OK);
+                MessageBox.Show("아이디와 비밀번호를 모두 입력해주세요", "경고", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
+            }
+            else
+            {
+                MessageBox.Show($"로그인 시도: {id} / {pw}", "로그인 정보");
             }
         }
     }

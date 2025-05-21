@@ -26,60 +26,75 @@ namespace WpfApp1
             // 선택된 라디오 버튼 확인
             string result = "";
 
-            if(radioMale.IsChecked == true)
+            if (radioMale.IsChecked == true)
             {
-                result = "남성을 선택 했습니다.";
+                result = "남성을 선택했습니다.";
             }
             else if (radioFemale.IsChecked == true)
             {
-                result = "여성을 선택 했습니다.";
+                result = "여성을 선택했습니다.";
             }
 
             MessageBox.Show(result);
         }
 
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void radioMale_Checked(object sender, RoutedEventArgs e)
         {
-
+            //MessageBox.Show("남성을 선택", "라디오 선택 결과");
         }
-        /*
-        //# slider
-        private void volumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs)
+
+        private void radioFemale_Checked(object sender, RoutedEventArgs e)
         {
-            if(volumeSlider != null)
+            //MessageBox.Show("여성을 선택", "라디오 선택 결과");
+        }
+
+        // # Slider 이벤트 - 실시간 값 변화
+        private void volumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (volumeText != null)
             {
-                // 슬라이더의 값이 변경될 때마다 호출되는 이벤트 핸들러
-                double volume = volumeSlider.Value;
-                // volume 값을 사용하여 음량 조절 등의 작업 수행
-                MessageBox.Show($"현재 음량: {volume}");
+                volumeText.Text = $"현재 값: {volumeSlider.Value}";
             }
-        }
-        */
-        private void volumeSlider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
         }
 
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {
+            // 체크된 항목들을 문자열로 조합
             List<string> selectedFruits = new List<string>();
 
-            if(checkBoxApple.IsChecked == true)
+            if (checkBoxApple.IsChecked == true)
             {
                 selectedFruits.Add("사과");
-            }/*
-            else if (checkBoxbanana.IsChecked == true)
+            }
+
+            if (checkBoxBanana.IsChecked == true)
             {
                 selectedFruits.Add("바나나");
             }
-            if (checkBoxApple.IsChecked == true)
+
+            if (checkBoxOrange.IsChecked == true)
             {
-                selectedFruits.Add("사과");
+                selectedFruits.Add("오렌지");
             }
-            if (checkBoxApple.IsChecked == true)
+
+            // 결과 표시
+            textResult.Text = $"선택한 과일: {string.Join(", ", selectedFruits)}";
+        }
+
+        private void checkBoxState_Click(object sender, RoutedEventArgs e)
+        {
+            bool? state = checkBoxState.IsChecked;
+
+            if (state == true)
             {
-                selectedFruits.Add("사과");
-            }*/
+                textStatus.Text = "현재 상태: 체크됨 (true)";
+            }
+            else if (state == false)
+            {
+                textStatus.Text = "현재 상태: 해제됨 (false)";
+            }
+            else
+                textStatus.Text = "현재 상태: 중간상태 (null)";
         }
     }
 }
@@ -135,6 +150,7 @@ namespace WpfApp1
  * - 텍스트를 화면에 출력해주는 WPF 가장 기본적인 텍스트 표시용 컨트롤
  * - 화면 읽기 전용 텍스트를 표시할 때 사용
  * - 사용자가 직접 입력x
+ * -> 입력은 TextBox에서 가능
  */
 #endregion
 
@@ -176,17 +192,19 @@ namespace WpfApp1
  * - TickFrequency : 눈금 간격 설정
  * - IsSnapToTickEnabled : 눈금에 맞춰서 이동할지 여부 설정
  * - Ticks : 눈금 표시 여부 설정
- * ㄴ false(기본값) : 눈금 표시 안함
- * - tickplacement
+ * ㄴ 특별한 위치에만 눈금이 필요 할 때
  */
 #endregion
 
 #region #8. Check Box
 /*
- * - 여러개의 항목을 복수 선택 가능하게 할 때 사용
+ * - 여러 개의 항목을 복수 선택 가능하게 할 때 사용
  * 
  * [속성]
- * - IsChecked : true/false/null 값을 가지는 bool타입 / 체크 여부를 나타냄
- * - Checked : 체크 되었을 때 발생하는 이벤트
-*/
+ * - IsChecked: true, false, null 값을 가지는 bool 타입 / 체크 여부를 나타냄
+ * - Checked: 체크되었을 때 발생하는 이벤트
+ * - UnChecked
+ * - Indeterminate: 중간 상태일 때 발생하는 이벤트
+ * - IsThreeState: true로 설정하면 중간 상태까지 허용 (기본값 : false)
+ */
 #endregion

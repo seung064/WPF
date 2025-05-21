@@ -73,8 +73,9 @@
                     <StackPanel Margin="20">
                         <Slider x:Name="volumeSlider" Minimum="0" Maximum="100"
                                 Value="50" TickFrequency="10" IsSnapToTickEnabled="True"
-                                TickPlacement="BottomRight" Width="200" ValueChanged="volumeSlider_ValueChanged_1"
+                                TickPlacement="BottomRight" Width="200" ValueChanged="volumeSlider_ValueChanged"
                                 Ticks="0, 30, 50, 90"/>
+                        <TextBlock x:Name="volumeText" FontSize="20" Margin="10"/>
                     </StackPanel>
                 </StackPanel>
             </TabItem>
