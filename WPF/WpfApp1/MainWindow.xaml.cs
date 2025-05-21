@@ -67,7 +67,7 @@ namespace WpfApp1
             if(checkBoxApple.IsChecked == true)
             {
                 selectedFruits.Add("사과");
-            }
+            }/*
             else if (checkBoxbanana.IsChecked == true)
             {
                 selectedFruits.Add("바나나");
@@ -79,7 +79,7 @@ namespace WpfApp1
             if (checkBoxApple.IsChecked == true)
             {
                 selectedFruits.Add("사과");
-            }
+            }*/
         }
     }
 }

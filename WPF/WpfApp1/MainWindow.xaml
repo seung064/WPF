@@ -78,16 +78,21 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <!-- 다섯번째 탭-->
+            <!-- 다섯번째 탭 -->
             <TabItem Header="체크박스">
                 <StackPanel Margin="20">
-                    <CheckBox x:Name="checkBoxApple" Content="사과" Checked="checkBox_Checked"/>
-                    <CheckBox x:Name="checkBoxBanana" Content="바나나" Checked="checkBox_Checked"/>
-                    <CheckBox x:Name="checkBoxOrange" Content="오렌지" Checked="checkBox_Checked"/>
+                    <CheckBox x:Name="checkBoxApple" Content="사과" Checked="checkBox_Checked" Unchecked="checkBox_Checked"/>
+                    <CheckBox x:Name="checkBoxBanana" Content="바나나" Checked="checkBox_Checked" Unchecked="checkBox_Checked"/>
+                    <CheckBox x:Name="checkBoxOrange" Content="오렌지" Checked="checkBox_Checked" Unchecked="checkBox_Checked"/>
                     <TextBlock x:Name="textResult" FontSize="26" Margin="10"/>
-                    <CheckBox x:Name="checkBoxState" Content="중간 상태 체크박스" IsThreeState="True"
+                    <CheckBox x:Name="checkBoxState" Content="중간 상태 체크박스" IsThreeState="True" Click="checkBoxState_Click" />
+                    <TextBlock x:Name="textStatus" FontSize="26" Margin="10"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
     </Grid>
 </Window>
+
+
+
+

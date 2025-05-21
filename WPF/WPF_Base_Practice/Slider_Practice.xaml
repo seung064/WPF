@@ -5,25 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Base_Practice"
         mc:Ignorable="d"
-        Title="Slider_Practice" Height="200" Width="400">
-    <Grid>
-        
-        <TextBlock Text="R" FontSize="10" Margin="60,10,0,10"/>
-        <Slider x:Name="Slider_R" Minimum="0" Maximum="200" Value="0" TickFrequency="5" IsSnapToTickEnabled="True" 
-                Width="200" ValueChanged="Slider_ValueChanged" Margin="60,10,0,10"/>
-        <TextBlock Text="G" FontSize="10" Margin="60,40,0,10"/>
-        <Slider x:Name="Slider_G" Minimum="0" Maximum="200" Value="0" TickFrequency="5" IsSnapToTickEnabled="True" 
-                Width="200" ValueChanged="Slider_ValueChanged" Margin="60,40,0,10"/>
-        <TextBlock Text="B" FontSize="10" Margin="60,70,0,30"/>
-        <Slider x:Name="Slider_B" Minimum="0" Maximum="200" Value="0" TickFrequency="5" IsSnapToTickEnabled="True" 
-                Width="200" ValueChanged="Slider_ValueChanged" Margin="60,70,0,50"/>
+        Title="Slider_Practice" Height="250" Width="400">
+    <StackPanel x:Name="MainPanel" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="R" Width="20" VerticalAlignment="Center"/>
+            <Slider x:Name="Slider_R" Minimum="0" Maximum="255" TickFrequency="5" 
+                    IsSnapToTickEnabled="True" Width="250" 
+                    ValueChanged="Slider_ValueChanged" />
+            <Label x:Name="R_Point" Grid.Row="4" FontSize="10" Content="0" Margin="10,0,0,0"
+                   VerticalContentAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="G" Width="20" VerticalAlignment="Center"/>
+            <Slider x:Name="Slider_G" Minimum="0" Maximum="255" TickFrequency="5" 
+                    IsSnapToTickEnabled="True" Width="250"
+                    ValueChanged="Slider_ValueChanged" />
+            <Label x:Name="G_Point" Grid.Row="4" FontSize="10" Content="0" Margin="10,0,0,0"
+                   VerticalContentAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="B" Width="20" VerticalAlignment="Center"/>
+            <Slider x:Name="Slider_B" Minimum="0" Maximum="255" TickFrequency="5" 
+                    IsSnapToTickEnabled="True" Width="250"
+                    ValueChanged="Slider_ValueChanged" />
+            <Label x:Name="B_Point" Grid.Row="4" FontSize="10" Content="0" Margin="10,0,0,0"
+                   VerticalContentAlignment="Center" />
+        </StackPanel>
 
 
-        <GroupBox Header = "Color Type" Margin="70, 90, 90, 40"/>
-        <RadioButton x:Name="Original" Content="Original" GroupName="color" IsChecked="True" Margin="100, 115, 70,5" FontSize="10"/>
-        <RadioButton x:Name="GrayTone" Content="GrayTone" GroupName="color"  Margin="170, 115, 70,5" FontSize="10"/>
-        <RadioButton x:Name="Invert" Content="Invert" GroupName="color" Margin="250, 115, 70,5" FontSize="10"/>
-
-
-    </Grid>
+        <GroupBox Header="Color Type" Grid.Row="3" Margin="70,5,70,0" Height="60">
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <RadioButton x:Name="Original" Content="Original" GroupName="color" 
+                             IsChecked="True" Margin="0,0,10,0" FontSize="12" Checked="ColorType"/>
+                <RadioButton x:Name="GrayTone" Content="GrayTone" GroupName="color" 
+                             Margin="0,0,10,0" FontSize="12" Checked="ColorType"/>
+                <RadioButton x:Name="Invert" Content="Invert" GroupName="color"
+                             FontSize="12" Checked="ColorType" />
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
 </Window>
