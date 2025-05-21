@@ -1,0 +1,16 @@
+﻿<Window x:Class="WPF_Base_Practice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Base_Practice"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="아이디:" Margin="150,150,0,0"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="비밀번호:" Margin="150,200,0,0"/>
+        <TextBox x:Name="id" HorizontalAlignment="Left" Height="20" Margin="300,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" />
+        <TextBox x:Name="password" HorizontalAlignment="Left" Height="20" Margin="300,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" />
+        <Button Grid.ColumnSpan="4" Grid.Row="4" Grid.Column="4" Content="로그인" Margin="300,250,400,100" Click="Button_Click"/>
+    </Grid>
+</Window>

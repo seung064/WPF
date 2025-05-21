@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPF_Base_Practice.Slider_Practice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Base_Practice"
+        mc:Ignorable="d"
+        Title="Slider_Practice" Height="200" Width="400">
+    <Grid>
+        
+        <TextBlock Text="R" FontSize="10" Margin="60,10,0,10"/>
+        <Slider x:Name="Slider_R" Minimum="0" Maximum="200" Value="0" TickFrequency="5" IsSnapToTickEnabled="True" 
+                Width="200" ValueChanged="Slider_ValueChanged" Margin="60,10,0,10"/>
+        <TextBlock Text="G" FontSize="10" Margin="60,40,0,10"/>
+        <Slider x:Name="Slider_G" Minimum="0" Maximum="200" Value="0" TickFrequency="5" IsSnapToTickEnabled="True" 
+                Width="200" ValueChanged="Slider_ValueChanged" Margin="60,40,0,10"/>
+        <TextBlock Text="B" FontSize="10" Margin="60,70,0,30"/>
+        <Slider x:Name="Slider_B" Minimum="0" Maximum="200" Value="0" TickFrequency="5" IsSnapToTickEnabled="True" 
+                Width="200" ValueChanged="Slider_ValueChanged" Margin="60,70,0,50"/>
+
+
+        <GroupBox Header = "Color Type" Margin="70, 90, 90, 40"/>
+        <RadioButton x:Name="Original" Content="Original" GroupName="color" IsChecked="True" Margin="100, 115, 70,5" FontSize="10"/>
+        <RadioButton x:Name="GrayTone" Content="GrayTone" GroupName="color"  Margin="170, 115, 70,5" FontSize="10"/>
+        <RadioButton x:Name="Invert" Content="Invert" GroupName="color" Margin="250, 115, 70,5" FontSize="10"/>
+
+
+    </Grid>
+</Window>
