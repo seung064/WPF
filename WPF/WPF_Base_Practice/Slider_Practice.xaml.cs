@@ -51,7 +51,9 @@ namespace WPF_Base_Practice
             MainPanel.Background = new SolidColorBrush(color);
 
             if (Original.IsChecked == true)
+            {
                 MainPanel.Background = new SolidColorBrush(Color.FromRgb(r, g, b));
+            }
             else if (GrayTone.IsChecked == true)
             {
                 byte gray = (byte)((r + g + b) / 3);
@@ -61,6 +63,12 @@ namespace WPF_Base_Practice
             {
                 MainPanel.Background = new SolidColorBrush(Color.FromRgb((byte)(255 - r), (byte)(255 - g), (byte)(255 - b)));
             }
+
+            /*
+             * RGB 값은 0~255 범위
+             * C#의 Byte 타입은 0~255 범위의 정수 값
+             * 
+             */
         }
 
     }
