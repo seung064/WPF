@@ -29,7 +29,7 @@ namespace WPF_Base_Practice
             string id = txtId.Text;
             string pw = txtPw.Password;
 
-            if(string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(pw))
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(pw))
             {
                 MessageBox.Show("아이디와 비밀번호를 모두 입력해주세요", "경고", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

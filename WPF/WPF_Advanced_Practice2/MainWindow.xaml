@@ -7,29 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel> 
-          <WrapPanel  
+        <StackPanel Margin="10">
+            <WrapPanel>
+                <Button x:Name="btnOpen" Content="File Oepn" Width="100" Margin="5" Click="btnOpen_Click"/>
+                <Button x:Name="btnGetData" Content="Get Data" Width="100" Margin="5" Click="btnGetData_Click" />
+            </WrapPanel>
+            <Label x:Name="lblPath" Content="파일 경로" Margin="5"/>
+            <DataGrid x:Name="dataGrid" Height="200" Margin="5"/>
         </StackPanel>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-            
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel>
-            <Button x:Name="FileOpen" Margin="10"
-                    Grid.Row="0" Grid.ColumnSpan="1"
-                    Click="File_Open"/>
-            <Button x:Name="GetData" Margin="10"
-                    Grid.Row="1" Grid.Column="2"
-                    
-        </StackPanel>
-        </Grid>
+    </Grid>
 </Window>

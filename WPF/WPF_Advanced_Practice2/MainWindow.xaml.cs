@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,21 +23,62 @@ namespace WPF_Advanced_Practice2
             InitializeComponent();
         }
 
-        private void File_Open(object sender, RoutedEventArgs e)
+        public class Person
         {
-            var filePath = string.Empty;
+            public string 이름 { get; set; }
+            public int 나이 { get; set; }
+            public string 설명 { get; set; }
 
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+        }
+        private void btnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "CSV 파일 (*.csv)|*.csv";
+
+            if (ofd.ShowDialog() == true)
             {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "All files (*.*)|*.*";
-                openFileDialog.RestoreDirectory = true;
+                lblPath.Content = ofd.FileName;
+                List<Person> people = new List<Person>();
 
-
-                if (openFileDialog.ShowDialog() == true)
+                try
                 {
-                    filePath = openFileDialog.FileName;
+                    using (StreamReader reader = new StreamReader(ofd.FileName))
+                    {
+                        reader.ReadLine();
+
+                        while (!reader.EndOfStream)
+                        {
+                            string line = reader.ReadLine();
+                            var parts = line.Split(',');
+
+                            if (parts.Length < 3) continue;
+
+                            people.Add(new Person
+                            {
+                                이름 = parts[0],
+                                나이 = int.Parse(parts[1]),
+                                설명 = parts[2]
+                            });
+                        }
+                    }
+                    dataGrid.ItemsSource = people;
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("파일 불러오는 도중 오류!" + ex.Message);
+                }
+            }
+        }
+
+        private void btnGetData_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem is Person selected)
+            {
+                MessageBox.Show("선택된 이름: " + selected.이름);
+            }
+            else
+            {
+                MessageBox.Show("선택된 행 없음.");
             }
         }
     }

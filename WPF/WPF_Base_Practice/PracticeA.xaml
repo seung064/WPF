@@ -17,16 +17,16 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-<!--아이디-->
-        <TextBlock Text="아이디:" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+
+        <!-- #1. 아이디 입력 -->
+        <TextBlock Text="아이디: " Grid.Row ="0" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
         <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Width="200"/>
 
-<!--비밀번호-->
-        <TextBlock Text="비밀번호:" Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+        <!-- #2. 비밀번호 입력 -->
+        <TextBlock Text="비밀번호: " Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
         <PasswordBox x:Name="txtPw" Grid.Row="1" Grid.Column="1" Margin="5" Width="200"/>
 
- <!--       버튼-->
-        <Button Content="로그인" Grid.Row="3" Grid.ColumnSpan="2" Margin="5" Click="Button_Click" HorizontalAlignment="Center"/>
-
+        <!-- #3. 로그인 버튼 -->
+        <Button Content="로그인" Grid.Row="2" Grid.ColumnSpan="2" Margin="5" Click="Button_Click" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

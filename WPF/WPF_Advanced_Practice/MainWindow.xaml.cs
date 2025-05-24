@@ -24,26 +24,28 @@ namespace WPF_Advanced_Practice
 
         }
 
-
-
-
-        private void Btn_Content_Change(object sender, RoutedEventArgs e)
+        private void btnImage_Click(object sender, RoutedEventArgs e)
         {
-            var filePath = string.Empty;
+            // [1] 파일 다이얼로그 열기
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "이미지 파일 (*.png; *.jpg; *.jpeg)|*.png;*.jpg;*.jpeg";
 
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == true)
             {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "All files (*.*)|*.*";
-                openFileDialog.RestoreDirectory = true;
+                // [2] 이미지 경로를 URI로 가져오기
+                Uri imageUri = new Uri(dialog.FileName, UriKind.Absolute);
+                BitmapImage bitmap = new BitmapImage(imageUri);
 
+                // [3] 버튼 배경 이미지 설정
+                ImageBrush brush = new ImageBrush(bitmap);
+                btnImage.Background = brush;
 
-                if (openFileDialog.ShowDialog() == DialogResult)
-                {
-                    filePath = openFileDialog.FileName;
+                // [4] 버튼 크기를 이미지 크기와 맞게 조정
+                btnImage.Width = bitmap.PixelWidth;
+                btnImage.Height = bitmap.PixelHeight;
 
-                }
-                img1.Source = new BitmapImage(new Uri(filePath, UriKind.Absolute));
+                // [5] 텍스트 제거 (선택사항)
+                btnImage.Content = null;
             }
         }
     }

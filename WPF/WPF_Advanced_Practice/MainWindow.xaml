@@ -7,13 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TabControl>
-            <TabItem Header="pack1">
-                <StackPanel>
-                    <Button Content="img1" Width="200" Height="200" Click="Btn_Content_Change"/>
-                    <Image x:Name="img1"/>
-                </StackPanel>
-             </TabItem>
-         </TabControl>
+        <Button x:Name="btnImage" Content="이미지 열기"
+                Width="150" Height="50" 
+                Click="btnImage_Click"/>
     </Grid>
 </Window>
