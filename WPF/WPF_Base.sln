@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Advanced_Practice", "WP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Advanced_Practice2", "WPF_Advanced_Practice2\WPF_Advanced_Practice2.csproj", "{88A60B2C-9AEE-4F76-B284-98E8F5B9DFDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM", "MVVM\MVVM.csproj", "{018BEFF9-F6DA-48A9-BE68-7D41EBD78A3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{88A60B2C-9AEE-4F76-B284-98E8F5B9DFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A60B2C-9AEE-4F76-B284-98E8F5B9DFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A60B2C-9AEE-4F76-B284-98E8F5B9DFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018BEFF9-F6DA-48A9-BE68-7D41EBD78A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018BEFF9-F6DA-48A9-BE68-7D41EBD78A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018BEFF9-F6DA-48A9-BE68-7D41EBD78A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018BEFF9-F6DA-48A9-BE68-7D41EBD78A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
